@@ -22,7 +22,7 @@ $.each($('a'), function(index, obj){
     var key = $(obj).text();
     var value = $(obj).attr('href');
     
-    if(jQuery.inArray(key, arr) == -1){
+    if(value != undefined && jQuery.inArray(key, arr) == -1){
         arr.push(key);
         var tmpVal = localStorage[key];
         if(tmpVal === undefined || tmpVal != value){
