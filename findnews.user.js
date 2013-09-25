@@ -14,6 +14,7 @@
 // @downloadURL    https://raw.github.com/pelebl/FindNews/master/findnews.user.js
 // @run-at         document-end
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
+// @require        https://raw.github.com/pelebl/FindNews/master/findnews.user.js
 // ==/UserScript==
 
 
