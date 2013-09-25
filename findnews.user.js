@@ -9,6 +9,7 @@
 // @include        http://www.163.com/
 // @include        http://www.sohu.com/
 // @include        http://www.donews.com/
+// @include        http://www.csdn.net/
 // @homepageURL    https://github.com/pelebl/FindNews/
 // @updateURL      https://raw.github.com/pelebl/FindNews/master/findnews.user.js
 // @downloadURL    https://raw.github.com/pelebl/FindNews/master/findnews.user.js
