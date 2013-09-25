@@ -1,4 +1,4 @@
-var version_helper = "1.0.3";
+var version_helper = "1.0.4";
 var version_updater = [
-"* Fix bug: 自动更新"
+"* 每日清理本地缓存"
 ];
