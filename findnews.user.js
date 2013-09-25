@@ -1,18 +1,18 @@
 // ==UserScript==
 // @name           新闻变更器
-// @version        1.0.1
 // @namespace      userscript.xiaja.com
 // @author         pelebl@gmail.com
 // @description    帮你找到最新的新闻
+// @homepageURL    https://github.com/pelebl/FindNews/
+// @updateURL      https://raw.github.com/pelebl/FindNews/master/findnews.user.js
+// @downloadURL    https://raw.github.com/pelebl/FindNews/master/findnews.user.js
+// @version        1.0.1
 // @include        http://www.ifeng.com/
 // @include        http://www.sina.com.cn/
 // @include        http://www.163.com/
 // @include        http://www.sohu.com/
 // @include        http://www.donews.com/
 // @include        http://www.csdn.net/
-// @homepageURL    https://github.com/pelebl/FindNews/
-// @updateURL      https://raw.github.com/pelebl/FindNews/master/findnews.user.js
-// @downloadURL    https://raw.github.com/pelebl/FindNews/master/findnews.user.js
 // @run-at         document-end
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // ==/UserScript==
