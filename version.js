@@ -1,4 +1,4 @@
 var version_helper = "1.0.3";
 var version_updater = [
-"* Fix bug: 自动更新处理"
+"* Fix bug: 鑷姩鏇存柊"
 ];
