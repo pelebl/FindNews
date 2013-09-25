@@ -8,6 +8,7 @@
 // @include        http://www.sina.com.cn/
 // @include        http://www.163.com/
 // @include        http://www.sohu.com/
+// @include        http://www.donews.com/
 // @homepageURL    https://github.com/pelebl/FindNews/
 // @updateURL      https://raw.github.com/pelebl/FindNews/master/findnews.user.js
 // @downloadURL    https://raw.github.com/pelebl/FindNews/master/findnews.user.js
