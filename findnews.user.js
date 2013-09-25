@@ -61,7 +61,7 @@ GM_xmlhttpRequest({
         eval(o.responseText);
 
         console.log("[INFO] 更新检查：当前版本=" + version + "，新版本=" + version_helper);
-        if (compareVersion(version, version_helper) < 0 && confirm("新闻更新器已发布新版 【" + version_12306_helper + "】，为了您的正常使用，请及时更新!是否立刻更新？\n\n本次更新内容如下：\n" + version_updater.join("\n"))) {
+        if (compareVersion(version, version_helper) < 0 && confirm("新闻更新器已发布新版 【" + version_helper + "】，为了您的正常使用，请及时更新!是否立刻更新？\n\n本次更新内容如下：\n" + version_updater.join("\n"))) {
             GM_openInTab("https://raw.github.com/pelebl/FindNews/master/findnews.user.js", true, true);
         }
     }
