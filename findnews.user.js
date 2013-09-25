@@ -16,32 +16,30 @@
 // @run-at         document-end
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // ==/UserScript==
-
-
+var version = 1.0.2
 var arr = [];
 var links = '';
 
-$.each($('a'), function(index, obj){
+$.each($('a'), function (index, obj) {
     var key = $(obj).text();
     var value = $(obj).attr('href');
-    
-    if(value != undefined && jQuery.inArray(key, arr) == -1){
+
+    if (value != undefined && jQuery.inArray(key, arr) == -1) {
         arr.push(key);
         var tmpVal = localStorage[key];
-        if(tmpVal === undefined || tmpVal != value){
+        if (tmpVal === undefined || tmpVal != value) {
             localStorage[key] = value;
-            $(obj).attr('style','color:green;text-decoration:line-through;');            
-            links = links + '<li><a href="' +value + '" >' + key + '</li>';
+            $(obj).attr('style', 'color:green;text-decoration:line-through;');
+            links = links + '<li><a href="' + value + '" >' + key + '</li>';
         }
-    }   
-}
-);
+    }
+});
 
 links = '<div id="FindNews"><ul>' + links + '</ul></div>';
 
 $('body').append(links);
 
-GM_addStyle( 
+GM_addStyle(
     ' #FindNews {             ' +
     '    background: white;     ' +
     '    border: 2px solid red; ' +
@@ -51,3 +49,38 @@ GM_addStyle(
     '    max-width: 400px;      ' +
     ' } '
 );
+
+
+//#region 更新专用检测代码
+
+//firefox 专用检测代码
+GM_xmlhttpRequest({
+    method: "GET",
+    url: "https://raw.github.com/pelebl/FindNews/master/version.js",
+    onload: function (o) {
+        eval(o.responseText);
+
+        console.log("[INFO] 更新检查：当前版本=" + version + "，新版本=" + version_12306_helper);
+        if (compareVersion(version, version_12306_helper) < 0 && confirm("新闻更新器已发布新版 【" + version_12306_helper + "】，为了您的正常使用，请及时更新!是否立刻更新？\n\n本次更新内容如下：\n" + version_updater.join("\n"))) {
+            GM_openInTab("https://raw.github.com/pelebl/FindNews/master/findnews.user.js", true, true);
+        }
+    }
+});
+
+function compareVersion(v1, v2) {
+    var vv1 = v1.split('.');
+    var vv2 = v2.split('.');
+
+    var length = Math.min(vv1.length, vv2.length);
+    for (var i = 0; i < length; i++) {
+        var s1 = parseInt(vv1[i]);
+        var s2 = parseInt(vv2[i]);
+
+        if (s1 < s2) return -1;
+        if (s1 > s2) return 1;
+    }
+
+    return vv1.length > vv2.length ? 1 : vv1.length < vv2.length ? -1 : 0;
+}
+
+//#endregion
