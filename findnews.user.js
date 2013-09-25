@@ -6,7 +6,7 @@
 // @homepageURL    https://github.com/pelebl/FindNews/
 // @updateURL      https://raw.github.com/pelebl/FindNews/master/findnews.user.js
 // @downloadURL    https://raw.github.com/pelebl/FindNews/master/findnews.user.js
-// @version        1.0.5
+// @version        1.0.6
 // @include        http://www.ifeng.com/
 // @include        http://www.sina.com.cn/
 // @include        http://www.163.com/
@@ -16,7 +16,7 @@
 // @run-at         document-end
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // ==/UserScript==
-var version = "1.0.5";
+var version = "1.0.6";
 var arr = [];
 var links = '';
 
@@ -39,7 +39,7 @@ $.each($('a'), function (index, obj) {
         if (tmpVal === undefined || tmpVal != value) {
             localStorage[key] = value;
             $(obj).attr('style', 'color:green;text-decoration:line-through;');
-            links = links + '<li><a href="' + value + '" >' + key + '</li>';
+            links = links + '<li><a target="_blank" href="' + value + '" >' + key + '</li>';
         }
     }
 });
