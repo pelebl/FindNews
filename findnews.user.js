@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           新闻变更
-// @version        1.0.0
+// @version        1.0.1
 // @namespace      userscript.xiaja.com
 // @author         pelebl@gmail.com
 // @description    帮你找到最新的新闻
