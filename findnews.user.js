@@ -6,7 +6,7 @@
 // @homepageURL    https://github.com/pelebl/FindNews/
 // @updateURL      https://raw.github.com/pelebl/FindNews/master/findnews.user.js
 // @downloadURL    https://raw.github.com/pelebl/FindNews/master/findnews.user.js
-// @version        1.0.2
+// @version        1.0.3
 // @include        http://www.ifeng.com/
 // @include        http://www.sina.com.cn/
 // @include        http://www.163.com/
@@ -16,7 +16,7 @@
 // @run-at         document-end
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // ==/UserScript==
-var version = 1.0.2
+var version = "1.0.3";
 var arr = [];
 var links = '';
 
@@ -60,8 +60,8 @@ GM_xmlhttpRequest({
     onload: function (o) {
         eval(o.responseText);
 
-        console.log("[INFO] 更新检查：当前版本=" + version + "，新版本=" + version_12306_helper);
-        if (compareVersion(version, version_12306_helper) < 0 && confirm("新闻更新器已发布新版 【" + version_12306_helper + "】，为了您的正常使用，请及时更新!是否立刻更新？\n\n本次更新内容如下：\n" + version_updater.join("\n"))) {
+        console.log("[INFO] 更新检查：当前版本=" + version + "，新版本=" + version_helper);
+        if (compareVersion(version, version_helper) < 0 && confirm("新闻更新器已发布新版 【" + version_12306_helper + "】，为了您的正常使用，请及时更新!是否立刻更新？\n\n本次更新内容如下：\n" + version_updater.join("\n"))) {
             GM_openInTab("https://raw.github.com/pelebl/FindNews/master/findnews.user.js", true, true);
         }
     }
@@ -81,6 +81,6 @@ function compareVersion(v1, v2) {
     }
 
     return vv1.length > vv2.length ? 1 : vv1.length < vv2.length ? -1 : 0;
-}
+};
 
 //#endregion

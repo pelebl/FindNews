@@ -1,4 +1,4 @@
-var version_helper = "1.0.2";
+var version_helper = "1.0.3";
 var version_updater = [
-"* 添加新的网站csdn"
+"* Fix bug: 自动更新处理"
 ];
