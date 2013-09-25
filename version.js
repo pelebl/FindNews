@@ -1,4 +1,4 @@
-var version_helper = "1.0.4";
+var version_helper = "1.0.5";
 var version_updater = [
-"* 每日清理本地缓存"
+"* 没有更新时会提示"
 ];

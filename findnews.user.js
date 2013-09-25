@@ -6,7 +6,7 @@
 // @homepageURL    https://github.com/pelebl/FindNews/
 // @updateURL      https://raw.github.com/pelebl/FindNews/master/findnews.user.js
 // @downloadURL    https://raw.github.com/pelebl/FindNews/master/findnews.user.js
-// @version        1.0.4
+// @version        1.0.5
 // @include        http://www.ifeng.com/
 // @include        http://www.sina.com.cn/
 // @include        http://www.163.com/
@@ -16,7 +16,7 @@
 // @run-at         document-end
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // ==/UserScript==
-var version = "1.0.4";
+var version = "1.0.5";
 var arr = [];
 var links = '';
 
@@ -44,7 +44,12 @@ $.each($('a'), function (index, obj) {
     }
 });
 
-links = '<div id="FindNews"><ul>' + links + '</ul></div>';
+if(links === ''){
+    links = '<div id="FindNews">没有更新噢:)</div>';
+}
+else{
+    links = '<div id="FindNews"><ul>' + links + '</ul></div>';
+}
 
 $('body').append(links);
 
