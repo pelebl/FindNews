@@ -16,7 +16,7 @@
 // @run-at         document-end
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // ==/UserScript==
-var version = "1.0.6";
+var version = "1.0.7";
 var arr = [];
 var links = '';
 
@@ -39,7 +39,11 @@ $.each($('a'), function (index, obj) {
         if (tmpVal === undefined || tmpVal != value) {
             localStorage[key] = value;
             $(obj).attr('style', 'color:green;text-decoration:line-through;');
-            links = links + '<li><a target="_blank" href="' + value + '" >' + key + '</li>';
+            
+            // just display length more than 4.
+            if(key.length > 4){
+                links = links + '<li><a target="_blank" href="' + value + '" >' + key + '</li>';
+            }         
         }
     }
 });
